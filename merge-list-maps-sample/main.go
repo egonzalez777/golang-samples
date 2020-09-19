@@ -7,7 +7,6 @@ func createUniqueSet(a, b []string) []string {
 	mapped := map[string]string{}
 	keysList := []string{}
 	for i := 0; i < len(combinedList); i++ {
-		fmt.Println(combinedList[i], "mmoooo: ", mapped[combinedList[i]])
 		if _, found := mapped[combinedList[i]]; found {
 			continue
 		} else {
