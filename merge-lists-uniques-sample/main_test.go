@@ -13,9 +13,16 @@ func TestMain(t *testing.T) {
 		t.Errorf("Failed to retrieve correct list, expected %v, and got %v", expectedList, uniqueList)
 	}
 
-	anotherUniqueLIst := uniqueNames([]string{}, []string{"Matt", "Henry"})
+	anotherUniqueList := uniqueNames([]string{}, []string{"Matt", "Henry"})
 
-	if reflect.DeepEqual(expectedList, anotherUniqueLIst) == false {
-		t.Errorf("Failed to retrieve correct list, expected %v, and got %v", expectedList, anotherUniqueLIst)
+	if reflect.DeepEqual(expectedList, anotherUniqueList) == false {
+		t.Errorf("Failed to retrieve correct list, expected %v, and got %v", expectedList, anotherUniqueList)
+	}
+
+	expectedDiverseList := []string{"Mark", "John", "Mikey", "Henry", "Jacob", "Mikey3"}
+	lastUniqueList := uniqueNames([]string{"Mark", "John", "Mikey"}, []string{"Henry", "Jacob", "Mark", "Mikey", "Mikey3"})
+
+	if reflect.DeepEqual(expectedDiverseList, lastUniqueList) == false {
+		t.Errorf("Failed to retrieve correct list, expected %v, and got %v", expectedDiverseList, lastUniqueList)
 	}
 }
